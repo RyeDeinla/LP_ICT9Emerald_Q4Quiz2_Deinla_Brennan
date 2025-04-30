@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title> O.B.D.P Score Analyzer </title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"; rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1 style="background-color: darkblue; color: white; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> Score Analyzer </h1>
+
+        <br> 
+
+        <details style="text-align: center;"> 
+            
+            <summary> Click for instructions: </summary>
+
+            <i> Click a subject and type down your respective grade in the text box that will appear. Then, click the button "Get Average Grade" to find out your General Average! </i>            
+        
+        </details>
+
+        <br>
+
+        <img src="english.jpg" alt="English" width="450" length="500" class="center" >
+
+        <br>
+
+        <input type="number" id="english_grade" placeholder="Type your English grade here!">
+
+        <br> <br>
+
+        <img src="math.png" alt="Mathematics" class="center">
+
+        <br>
+
+        <input type="number" id="math_grade" placeholder="Type your Mathematics grade here!">
+
+        <br> <br>
+
+        <img src="science.jpg" alt="Science" class="center">
+
+        <br>
+
+        <input type="number" id="science_grade" placeholder="Type your Science grade here!">   
+
+        <br> <br>
+
+        <button type="button" onclick="final_average()" class="btn btn-warning"> Get Average Grade </button>
+
+        <br> <br> 
+
+        <a href="https://www.vectorstock.com/royalty-free-vector/design-concept-of-word-english-website-banner-vector-20429810"> https://www.vectorstock.com/royalty-free-vector/design-concept-of-word-english-website-banner-vector-20429810 </a>
+
+        <br> <br>
+
+        <a href="https://www.freepik.com/free-vector/science-word-concept_7967019.htm#fromView=keyword&page=1&position=17&uuid=e97845e2-9263-474b-9f95-8f94eb21961d&query=Science+Logo"> https://www.freepik.com/free-vector/science-word-concept_7967019.htm#fromView=keyword&page=1&position=17&uuid=e97845e2-9263-474b-9f95-8f94eb21961d&query=Science+Logo </a>
+
+        <br> <br> 
+
+        <a href="https://www.freepik.com/premium-vector/simple-math-education-logo-designs-concept-vector_22148305.htm#fromView=keyword&page=1&position=13&uuid=90d81fae-8f7b-4765-a44e-c38a57a71eda&query=Math+Logo"> https://www.freepik.com/premium-vector/simple-math-education-logo-designs-concept-vector_22148305.htm#fromView=keyword&page=1&position=13&uuid=90d81fae-8f7b-4765-a44e-c38a57a71eda&query=Math+Logo </a>
+
+        <br> <br>
+
+    </div>
+
+    <script>
+
+        function final_average() {
+
+            var eng = document.getElementById("english_grade").value;
+
+            var math = document.getElementById("math_grade").value;
+
+            var sci = document.getElementById("science_grade").value;
+
+            var general_average = (eng + math + sci) / 3;
+
+            switch (general_average) {
+
+                case (94 <= general_average <= 100): 
+                rating = "Excellent";
+                break; 
+
+                case (87 <= general_average <= 93.99): 
+                rating = "Above Satisfactory";
+                break; 
+
+                case (80 <= general_average <= 86.990):
+                rating = "Satisfactory";
+                break; 
+
+                case (75 <= general_average <= 79.99): 
+                rating = "Needs Improvement";
+                break; 
+
+                case (70 <= general_average <= 74.99):
+                rating = "Poor";
+                break;
+
+                default:
+                rating = "Extremely Poor";
+                break;
+                
+            }
+
+            window.alert("The Final Average for these three subjects is" + " " + general_average + " " + "-" + " " + rating)
+
+        }
+
+    </script>
+
+</body>
+
+</html>
